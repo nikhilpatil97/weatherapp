@@ -1,0 +1,36 @@
+<div class="flex-container" *ngIf="currentWeatherData else loading"> 
+    <div class="flex-item">
+        <!--Div for icon-->
+        <div class="icon"><img src="../../../assets/{{currentWeatherData.icon}}.png" /></div>
+
+        <div class="flex-inner"><label>City: {{currentWeatherData.cityName}}</label></div>
+
+        <!--Div for Temprature-->
+        <div class="flex-inner"><label>Temperature: {{(currentWeatherData.temperature - 270).toFixed(2)}}&#8451; / {{(currentWeatherData.temperature - 240).toFixed(2)}}&#8457;</label>
+        </div>
+    </div>
+    <!--Div for Date-->
+    <!--<div style="margin-top: 4%; border:1px solid red">-->
+    <div class="flex-item">
+        <label>Date: {{currentWeatherData.date*1000 | date}}</label>
+    </div>
+
+    <!--Parent div of right side-->
+    <div class="flex-item">
+        <!--Div for Weather-->
+        <!---Display Weather information-->
+        <div class="flex-inner"><label>Weather: {{currentWeatherData.weather}}</label></div>
+        <!---Display Weather Description-->
+        <div class="flex-inner"><label>Description: {{currentWeatherData.description}}</label></div>
+        <!---Display Humidity-->
+        <div class="flex-inner"><label>Humidity: {{currentWeatherData.humidity}}</label></div>
+        <!---Display Pressure-->
+        <div class="flex-inner"><label>Pressure: {{currentWeatherData.pressure}}</label></div>
+        <!---Display Wind speed-->
+        <div class="flex-inner"><label>Wind Speed: {{currentWeatherData.speed}}</label></div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="flex-container">Loading...</div>
+</ng-template>

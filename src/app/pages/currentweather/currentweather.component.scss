@@ -1,0 +1,24 @@
+@import "src/variables";
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .flex-item {
+    background-color: $background-color;
+    //width: 100%;
+    padding: 2%;
+    margin-top: 3%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    text-align: left;
+    align-content: center;
+    border-radius: 5px;
+
+    label {
+      font-size: 20px;
+    }
+  }
+}

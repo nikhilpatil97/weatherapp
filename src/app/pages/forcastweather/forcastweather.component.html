@@ -1,0 +1,14 @@
+<div class="flex-container-days" id="itemDays">
+    <div class="flex-item-days" *ngFor="let data of forecastWeatherData;">
+        <!-- <div class="flex-item-days" *ngFor="let data of forecastWeatherData.slice(1); let i=index"> -->
+        <!--Display Icon-->
+        <div class="icon"><img src="../../../assets/{{data.weather[0].icon}}.png" /></div>
+        <!--Display Icon-->
+        <h4>Date: {{data.dt*1000 | date}}</h4>
+        <!--Display Icon-->
+        <h4>Temperature: {{(data.temp.day - 270).toFixed(2)}}&#8451;/{{(data.temp.day - 240).toFixed(2)}}&#8457;</h4>
+        <!--Display Icon-->
+        <h4>Weather: {{data.weather[0].main}}</h4>
+
+    </div>
+</div>
